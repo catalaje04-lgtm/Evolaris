@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evolaris — Servicios</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+/* ===========================
+   Tokens
+=========================== */
+:root {
+  --color-bg-header: #F9F9F9;
+  --color-white: #FFFFFF;
+  --color-green: #00C100;
+  --color-text-dark: #2B2724;
+  --color-text-body: #4B4740;
+
+  --color-badge-agro-bg: #ABE59B;
+  --color-badge-agro-text: #1B5312;
+
+  --color-badge-industria-bg: #EEE075;
+  --color-badge-industria-text: #534D13;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --container-max: 1280px;
+  --container-pad: 6.25rem; /* 100px */
+}
+
+/* ===========================
+   Reset
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  background-color: var(--color-white);
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.text-green {
+  color: var(--color-green);
+}
+
+/* ===========================
+   Header
+=========================== */
+.header {
+  background-color: var(--color-bg-header);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1.25rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.logo__text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.03em;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav__link {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: var(--color-green);
+  transition: opacity 0.2s ease;
+}
+
+.nav__link:hover {
+  opacity: 0.7;
+}
+
+.btn-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-green);
+  color: var(--color-text-dark);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 0.625rem 1.375rem;
+  border-radius: 999px;
+  transition: opacity 0.2s ease;
+}
+
+.btn-contact:hover {
+  opacity: 0.85;
+}
+
+/* ===========================
+   Hero
+=========================== */
+.hero {
+  position: relative;
+  height: 25.9375rem; /* 415px */
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 45%);
+}
+
+.hero__content {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 1.15;
+  color: var(--color-white);
+}
+
+/* ===========================
+   Services
+=========================== */
+.services {
+  padding-block: 4rem;
+}
+
+.services__heading {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--color-text-dark);
+  margin-bottom: 2.5rem;
+}
+
+.services__heading:not(:first-child) {
+  margin-top: 3rem;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+}
+
+.service-item {
+  display: grid;
+  grid-template-columns: minmax(0, 460px) minmax(0, 512px);
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.service-item__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.badge {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  padding: 0.25rem 0.875rem;
+  border-radius: 999px;
+}
+
+.badge--agro {
+  background-color: var(--color-badge-agro-bg);
+  color: var(--color-badge-agro-text);
+}
+
+.badge--industria {
+  background-color: var(--color-badge-industria-bg);
+  color: var(--color-badge-industria-text);
+}
+
+.service-item__title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 2.25rem;
+  line-height: 1.2;
+  color: var(--color-text-dark);
+}
+
+.service-item__text {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-text-body);
+}
+
+.service-item__image {
+  width: 100%;
+  aspect-ratio: 512 / 300;
+  overflow: hidden;
+  border-radius: 0.25rem;
+}
+
+.service-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+@media (max-width: 1024px) {
+  :root {
+    --container-pad: 2.5rem;
+  }
+
+  .hero__title {
+    font-size: 2.25rem;
+  }
+
+  .service-item {
+    grid-template-columns: 1fr;
+  }
+
+  .service-item__image {
+    order: -1;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --container-pad: 1.25rem;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .hero {
+    height: 20rem;
+  }
+
+  .hero__title {
+    font-size: 1.75rem;
+  }
+
+  .service-item__title {
+    font-size: 1.75rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <div class="logo">
+        <svg class="logo__icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 5 L26 5 L22 10 L2 10 Z" fill="var(--color-green)"/>
+          <path d="M2 13 L26 13 L22 18 L2 18 Z" fill="var(--color-green)"/>
+          <path d="M2 21 L26 21 L22 26 L2 26 Z" fill="var(--color-green)"/>
+        </svg>
+        <span class="logo__text">EVOLARIS</span>
+      </div>
+
+      <nav class="nav">
+        <a href="#servicios" class="nav__link">Servicios</a>
+        <a href="#productos" class="nav__link">Productos</a>
+        <a href="#nosotros" class="nav__link">Nosotros</a>
+      </nav>
+
+      <a href="#contacto" class="btn-contact">Contactar</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="images/campo-verde.jpg" alt="Campo verde bajo un cielo despejado" class="hero__bg">
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <h1 class="hero__title">
+        Transformamos el presente,<br>
+        proyectamos al <span class="text-green">futuro.</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section class="services" id="servicios">
+    <div class="container">
+
+      <!-- Servicios para el Agro -->
+      <h2 class="services__heading">Servicios para el Agro</h2>
+
+      <div class="service-list">
+
+        <article class="service-item">
+          <div class="service-item__content">
+            <span class="badge badge--agro">Agricultura</span>
+            <h3 class="service-item__title">Pulverización</h3>
+            <p class="service-item__text">
+              Aplicación de fitosanitarios, fertilizantes y herbicidas. El flujo de aire generado por el equipo facilita la penetración del producto en la planta y permite trabajar incluso con suelo húmedo, evitando pisar el cultivo.
+            </p>
+          </div>
+          <div class="service-item__image">
+            <img src="images/campo-verde.jpg" alt="Campo verde">
+          </div>
+        </article>
+
+        <article class="service-item">
+          <div class="service-item__content">
+            <span class="badge badge--agro">Agricultura</span>
+            <h3 class="service-item__title">Fertilización</h3>
+            <p class="service-item__text">
+              Distribución de nutrientes líquidos y sólidos granulados. Permite aplicar la dosis justa en las zonas que lo requieren, cuidando la estructura del suelo y haciendo un uso más eficiente de cada insumo.
+            </p>
+          </div>
+          <div class="service-item__image">
+            <img src="images/campo-verde.jpg" alt="Campo verde">
+          </div>
+        </article>
+
+        <article class="service-item">
+          <div class="service-item__content">
+            <span class="badge badge--agro">Agricultura</span>
+            <h3 class="service-item__title">Siembra</h3>
+            <p class="service-item__text">
+              Distribución uniforme ideal para cultivos de cobertura. Permite realizar la siembra evitando la pisada sobre el terreno.
+            </p>
+          </div>
+          <div class="service-item__image">
+            <img src="images/campo-verde.jpg" alt="Campo verde">
+          </div>
+        </article>
+
+        <article class="service-item">
+          <div class="service-item__content">
+            <span class="badge badge--agro">Agricultura</span>
+            <h3 class="service-item__title">Análisis multiespectral</h3>
+            <p class="service-item__text">
+              Geolocalización de cada individuo para conocer su estado, sus necesidades y sus niveles de estrés. Permite monitorear grandes áreas con precisión e identificar aquellas que necesitan mayor cuidado, devolviendo información clave y recomendaciones para la toma de decisiones críticas en el cultivo.
+            </p>
+          </div>
+          <div class="service-item__image">
+            <img src="images/campo-verde.jpg" alt="Campo verde">
+          </div>
+        </article>
+
+        <article class="service-item">
+          <div class="service-item__content">
+            <span class="badge badge--agro">Agricultura</span>
+            <h3 class="service-item__title">Mapas de prescripción y aplicación selectiva</h3>
+            <p class="service-item__text">
+              Aplicación de fitosanitarios, fertilizantes y herbicidas. El flujo de aire generado por el equipo facilita la penetración del producto en la planta y permite trabajar incluso con suelo húmedo, evitando pisar el cultivo.
+            </p>
+          </div>
+          <div class="service-item__image">
+            <img src="images/campo-verde.jpg" alt="Campo verde">
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Servicios para la Industria -->
+      <h2 class="services__heading">Servicios para la Industria</h2>
+
+      <div class="service-list">
+
+        <article class="service-item">
+          <div class="service-item__content">
+            <span class="badge badge--industria">Industria</span>
+            <h3 class="service-item__title">Fotogrametría</h3>
+            <p class="service-item__text">
+              Aplicación de fitosanitarios, fertilizantes y herbicidas. El flujo de aire generado por el equipo facilita la penetración del producto en la planta y permite trabajar incluso con suelo húmedo, evitando pisar el cultivo.
+            </p>
+          </div>
+          <div class="service-item__image">
+            <img src="images/campo-verde.jpg" alt="Campo verde">
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
