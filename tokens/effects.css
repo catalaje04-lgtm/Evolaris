@@ -1,0 +1,9 @@
+:root{
+--shadow-card:0 1px 2px rgba(13,13,13,0.06),0 2px 8px rgba(13,13,13,0.06);
+--shadow-elevated:0 4px 16px rgba(13,13,13,0.10);
+--ease-standard:cubic-bezier(.4,0,.2,1); /* @kind other */
+--duration-fast:120ms; /* @kind other */
+--duration-base:180ms; /* @kind other */
+--ease-emphasized:cubic-bezier(.2,.8,.2,1); /* @kind other */
+--opacity-disabled:0.4; /* @kind other */
+}
