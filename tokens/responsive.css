@@ -1,0 +1,70 @@
+/* Escalas responsive: los componentes leen estas variables (con fallback al valor
+   desktop). Se reescriben por breakpoint real (<=900px).
+   --pad-x-servicios es una excepción propia del sitio (no del export de diseño):
+   Servicios mantiene 120px de margen lateral en desktop a pedido, en vez de los
+   48px de --pad-x que usan el resto de las secciones. */
+:root{
+--pad-x:48px;
+--pad-x-servicios:120px;
+--band-pad-x:230px;
+--footer-pad-x:64px;
+--section-gap:120px;
+--split-gap:56px;
+--row-gap:calc(60px * var(--rhythm, 1));
+--band-gap:48px;
+--band-icon:48px;
+--search-max:420px;
+--form-pad:40px;
+--form-pad-bottom:40px;
+--cols-split:minmax(0,0.44fr) minmax(0,0.56fr);
+--cols-split-narrow:minmax(0,0.42fr) minmax(0,0.58fr);
+--cols-3:repeat(3,minmax(0,1fr));
+--cols-2:minmax(0,1fr) minmax(0,1fr);
+--cols-footer:1.2fr 1fr 1fr 1fr;
+--card-h:380px;
+--hero-pad:0 40px 36px;
+--footer-claim:56px;
+--quote-size:24px;
+--size-h1:clamp(44px, 5.6vw, 72px);
+--size-h2:60px;
+--size-h3:40px;
+--size-h4:30px;
+--size-h3-compact:34px;
+--size-h3-mini:30px;
+}
+.text-h1{font-size:var(--size-h1)}.text-h2{font-size:var(--size-h2)}.text-h3{font-size:var(--size-h3)}.text-h4{font-size:var(--size-h4)}
+.ds-nav-desktop{display:flex}
+.ds-nav-burger{display:none}
+@media (max-width:900px){
+:root{
+--pad-x:24px;
+--pad-x-servicios:24px;
+--band-pad-x:24px;
+--footer-pad-x:24px;
+--section-gap:64px;
+--split-gap:24px;
+--row-gap:40px;
+--band-gap:16px;
+--band-icon:32px;
+--search-max:100%;
+--form-pad:18px;
+--form-pad-bottom:24px;
+--cols-split:minmax(0,1fr);
+--cols-split-narrow:minmax(0,1fr);
+--cols-3:minmax(0,1fr);
+--cols-2:minmax(0,1fr);
+--cols-footer:minmax(0,1fr);
+--card-h:auto;
+--hero-pad:0 24px 28px;
+--footer-claim:34px;
+--quote-size:18px;
+--size-h1:40px;
+--size-h2:32px;
+--size-h3:28px;
+--size-h4:22px;
+--size-h3-compact:28px;
+--size-h3-mini:26px;
+}
+.ds-nav-desktop{display:none}
+.ds-nav-burger{display:inline-flex}
+}

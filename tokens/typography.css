@@ -1,0 +1,35 @@
+@font-face{font-family:"Space Grotesk";src:url("../assets/fonts/SpaceGrotesk-Variable.ttf") format("truetype-variations");font-weight:300 700;font-style:normal;font-display:swap;}
+@font-face{font-family:"Inter";src:url("../assets/fonts/Inter-Variable.ttf") format("truetype-variations");font-weight:100 900;font-style:normal;font-display:swap;}
+@font-face{font-family:"Inter";src:url("../assets/fonts/Inter-Italic-Variable.ttf") format("truetype-variations");font-weight:100 900;font-style:italic;font-display:swap;}
+:root{
+--font-display:"Space Grotesk",sans-serif;
+--font-body:"Inter",sans-serif;
+--tracking-tight:-3.5%;
+--lh-title:1.05; /* @kind other */
+--lh-body:1.1; /* @kind other */
+--text-h1-size:72px;
+--text-h1-weight:400;
+--text-h2-size:60px;
+--text-h2-weight:400;
+--text-h3-size:40px;
+--text-h3-weight:400;
+--text-h4-size:30px;
+--text-h4-weight:400;
+--text-h5-size:18px;
+--text-h5-weight:400;
+--text-label-size:12px;
+--text-label-weight:500;
+--text-paragraph-size:16px;
+--text-paragraph-weight:400;
+--text-quote-size:30px;
+--text-quote-weight:400;
+}
+.text-h1{font-family:var(--font-display);font-weight:var(--text-h1-weight);font-size:var(--text-h1-size);line-height:var(--lh-title);letter-spacing:var(--tracking-tight);}
+.text-h2{font-family:var(--font-display);font-weight:var(--text-h2-weight);font-size:var(--text-h2-size);line-height:var(--lh-title);letter-spacing:var(--tracking-tight);}
+.text-h3{font-family:var(--font-display);font-weight:var(--text-h3-weight);font-size:var(--text-h3-size);line-height:var(--lh-title);letter-spacing:var(--tracking-tight);}
+.text-h4{font-family:var(--font-display);font-weight:var(--text-h4-weight);font-size:var(--text-h4-size);line-height:var(--lh-title);letter-spacing:var(--tracking-tight);}
+.text-h5{font-family:var(--font-display);font-weight:var(--text-h5-weight);font-size:var(--text-h5-size);line-height:var(--lh-title);letter-spacing:var(--tracking-tight);}
+.text-label{font-family:var(--font-display);font-weight:var(--text-label-weight);font-size:var(--text-label-size);line-height:var(--lh-body);letter-spacing:var(--tracking-tight);}
+.text-paragraph{font-family:var(--font-body);font-weight:var(--text-paragraph-weight);font-size:var(--text-paragraph-size);line-height:var(--lh-body);}
+.text-quote{font-family:var(--font-body);font-weight:var(--text-quote-weight);font-size:var(--text-quote-size);line-height:var(--lh-body);}
+body{font-family:var(--font-body);}
